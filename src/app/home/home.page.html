@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gogifty</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="header">
+    <ion-searchbar placeholder="Search"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/gifts" color="danger">
+      <ion-icon name="gift-outline" #giftIcon></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div id="container">
+  </div>
+</ion-content>

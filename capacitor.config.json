@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ShopPoints",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tous les cadeaux</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="header">
+    <ion-searchbar [(ngModel)]="Filter" placeholder="Search" (ionFocus)="onChangeEvent($event)"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <div class="title ion-padding">
+    <h4>Catégories</h4>
+    <p>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </p>
+  </div>
+
+  <div class="scrolling-wrapper">
+    <ion-button id="allGiftsBtn" class="category-btn" fill="outline" (click)="initialElements()">
+      <p>Tous</p>
+    </ion-button>
+    <div class="card" *ngFor="let categorie of categoriesList">
+      <ion-button [id]="categorie.id" (click)="FilterCategory(categorie.id, categorie.libelle)" class="category-btn"
+        fill="outline">
+        <img src="/assets/img/categories/{{ categorie.image }}" />
+        <p>{{ categorie.libelle }}</p>
+      </ion-button>
+    </div>
+  </div>
+
+  <div id="allGifts" class="title ion-padding">
+    <h4>Tous les cadeaux</h4>
+    <p>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </p>
+  </div>
+
+
+  <ion-row wrap>
+    <ion-col *ngFor="let gift of giftList | filter:Filter" width-50>
+      <ion-card>
+        <ion-card-content>
+          <img src="/assets/img/gifts/{{ gift.image }}" />
+          <p>{{ gift.nbPoints }} points</p>
+          <h6>{{ gift.marque }}</h6>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
