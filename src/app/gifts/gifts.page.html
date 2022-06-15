@@ -49,8 +49,8 @@
   </div>
 
 
-  <ion-row wrap>
-    <ion-col *ngFor="let gift of giftList | filter:Filter" width-50>
+  <ion-row >
+    <ion-col *ngFor="let gift of giftList | filter:Filter" size="6">
       <ion-card>
         <ion-card-content>
           <img src="/assets/img/gifts/{{ gift.image }}" />
