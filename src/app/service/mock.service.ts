@@ -17,7 +17,10 @@ export class MockService {
         description: "Sì Limited Edition Edp Vaporisateur Giorgio Armani 150 ml",
         nbPoints: 320,
         categorie: "parfum",
-        image: 'armani.jpg'
+        image: 'armani.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 2,
@@ -27,7 +30,10 @@ export class MockService {
         description: "Avec la nouvelle Eau de Parfum d'Exception Oui La Vie Est Belle, Lancôme fait résonner une nouvelle déclaration de bonheur, résolument positive et optimiste",
         nbPoints: 450,
         categorie: "parfum",
-        image: 'lancome.jpg'
+        image: 'lancome.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 3,
@@ -37,7 +43,10 @@ export class MockService {
         description: "Une fragrance fleurie et pétillante dans un flacon aux lignes rondes. Un souffle d'énergie qui vous entraîne dans son tourbillon de bonheur et de fantaisie.",
         nbPoints: 580,
         categorie: "parfum",
-        image: 'chanel.jpg'
+        image: 'chanel.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 4,
@@ -47,7 +56,10 @@ export class MockService {
         description: "Cette édition limitée a été conçue en collaboration avec la maison de couture italienne GENTILE CATONE",
         nbPoints: 220,
         categorie: "maquiallage",
-        image: 'nocibe.jpg'
+        image: 'nocibe.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 5,
@@ -57,7 +69,10 @@ export class MockService {
         description: "Voile de couleur ultra lumineux, fraîcheur et longue tenue",
         nbPoints: 160,
         categorie: "maquiallage",
-        image: 'sisley.jpg'
+        image: 'sisley.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 6,
@@ -67,7 +82,10 @@ export class MockService {
         description: "Antiperspirant & Déodorant. Ce déodorant sans alcool délicatement parfumé, formulé à partir d'extraits de feuille de buchu, d'hamamélis et de romarin, aide à réguler la transpiration pour laisser une agréable sensation sèche et fraîche.",
         nbPoints: 80,
         categorie: "soin",
-        image: 'clarins.jpg'
+        image: 'clarins.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
       },
       {
         id: 7,
@@ -77,7 +95,10 @@ export class MockService {
         description: "La Crème Corps L-Carnosine Anti-A.G.E. DERMA COSMETICS utilise la L-Carnosine, un ingrédient actif unique, qui permet de prévenir la glycation des cellules et d’ainsi ralentir le processus de vieillissement de la peau.",
         nbPoints: 100,
         categorie: "soin",
-        image: 'derma.jpg'
+        image: 'derma.jpg',
+        imageDetail: [
+          'armani1.jpg', 'armani2.jpg'
+        ]
 
       }
     ]);

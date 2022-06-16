@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{giftMark}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div>
+    <ion-card>
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let img of selectedGift.imageDetail">
+          <img src="assets/img/gifts/details/{{img}}" />
+        </ion-slide>
+      </ion-slides>
+    </ion-card>
+  </div>
+
+
+  <div class="gift-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <div class="gift-mark-title">
+            <p>#{{selectedGift.marque}}</p>
+          </div>
+
+        </ion-col>
+        <ion-col class="btn-holder">
+          <ion-icon color="danger" size="large" name="heart-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div class="ion-padding-horizontal">
+    <div class="gift-name-title">
+      <p>{{selectedGift.libelle}}</p>
+    </div>
+    <div class="points-holder">
+      <p>
+        {{selectedGift.nbPoints}} points
+      </p>
+    </div>
+  </div>
+
+  <div class="quantity-container">
+
+    <ion-button class="btn-quantity-holder" *ngIf="quantity==1; else decrease" disabled>
+      <ion-icon name="remove"></ion-icon>
+    </ion-button>
+
+    <ng-template #decrease>
+      <ion-button class="btn-quantity-holder" (click)="decreaseQuantity()">
+        <ion-icon name="remove"></ion-icon>
+      </ion-button>
+    </ng-template>
+
+    <p>{{quantity}}</p>
+    <ion-button class="btn-quantity-holder" (click)="increaseQuantity()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="btn-add-to-cart">
+    <ion-button color="danger" (click)="addToCart()">
+      <ion-icon name="cart-outline"></ion-icon>
+      <p>Ajouter</p>
+    </ion-button>
+  </div>
+
+  <ion-accordion-group>
+    <ion-accordion>
+      <ion-item slot="header">
+        <div class="title">
+          <h4>Description</h4>
+        </div>
+      </ion-item>
+      <ion-list slot="content">
+        <div class="gift-description ion-padding-horizontal">
+          <p>
+            {{selectedGift.description}}
+          </p>
+        </div>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div class="title ion-padding">
+    <h4>Même catégorie</h4>
+  </div>
+
+  <div class="similar-gift-list">
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let gift of similarGifts">
+        <ion-card (click)="openDetail(gift)">
+          <img src="/assets/img/gifts/{{ gift.image }}" />
+          <ion-card-header>
+            <ion-card-subtitle>{{ gift.nbPoints }} points</ion-card-subtitle>
+            <h6>{{ gift.marque }}</h6>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>

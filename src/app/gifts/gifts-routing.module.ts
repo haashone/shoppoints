@@ -7,36 +7,15 @@ import { GiftsPage } from './gifts.page';
 const routes: Routes = [
   {
     path: '',
-    component: GiftsPage,
-    children: [
-      {
-        path: 'home',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
-          }
-        ]
-      },
-      {
-        path: 'favorite',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../user/favorite/favorite.module').then(m => m.FavoritePageModule)
-          }
-        ]
-      },
-      {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../user/profile/profile.module').then(m => m.ProfilePageModule)
-          }
-        ]
-      }
-    ]
+    component: GiftsPage
+  },
+  {
+    path: '',
+    component: GiftsPage
+  },
+  {
+    path: 'gift-detail/:d',
+    loadChildren: () => import('./gift-detail/gift-detail.module').then(m => m.GiftDetailPageModule)
   },
 ];
 

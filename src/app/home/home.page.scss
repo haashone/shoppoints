@@ -6,8 +6,13 @@
 
 ion-searchbar {
   --icon-color: #0083b0;
+  --border-radius: 10px;
+  padding: 5px;
 }
 
+ion-toolbar {
+  --padding-bottom: 15px;
+}
 
 #container {
   text-align: center;

@@ -4,6 +4,7 @@ import { MockService } from '../service/mock.service';
 import { ModalController } from '@ionic/angular';
 import { FilterModalPage } from '../shared/modals/filter-modal/filter-modal.page';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gifts',
@@ -19,7 +20,7 @@ export class GiftsPage implements OnInit {
   filterProps = {}
   @ViewChild(IonContent, { static: false }) content: IonContent;
 
-  constructor(private service: MockService, private modalCtrl: ModalController) { }
+  constructor(private service: MockService, private modalCtrl: ModalController, private router: Router) { }
 
   async presentModal() {
 
@@ -100,6 +101,10 @@ export class GiftsPage implements OnInit {
   scrollToGiftsList() {
     var elementToScroll = document.getElementById("allGifts");
     this.content.scrollToPoint(0, elementToScroll.offsetTop - 60, 500)
+  }
+
+  openDetail(gift) {
+    this.router.navigateByUrl(`/tabs/gifts/gift-detail/` + gift.id + `/` + gift.marque);
   }
 
 }

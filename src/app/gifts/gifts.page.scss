@@ -1,49 +1,14 @@
-.header {
-    --background: linear-gradient(to right, #00b4db, #0083b0);
-    color: white;
-    padding-top: 15px;
+ion-card-title {
+    font-size: 14px;
+    font-family: 'Nunito';
 }
 
 ion-searchbar {
-    --icon-color: #0083b0
+    --icon-color: #0083b0;
+    --border-radius: 10px;
+    padding: 5px;
 }
 
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h4 {
-        margin: 0 0 0 0;
-        color: #4d4d4d;
-        font-weight: bold;
-        font-size: large;
-    }
-
-    p {
-        color: #656565;
-        font-size: small
-    }
-}
-
-
-.scrolling-wrapper {
-    overflow-x: scroll;
-    white-space: nowrap;
-
-    .card {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .category-btn {
-        height: 50px;
-        --color: black;
-        --border-color: #A1C9D7;
-        --border-radius: 20px;
-
-        img {
-            margin-right: 5px;
-        }
-    }
+ion-toolbar {
+    --padding-bottom: 15px;
 }

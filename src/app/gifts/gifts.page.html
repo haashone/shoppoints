@@ -20,7 +20,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [scrollEvents]="true">
+<ion-content [fullscreen]="true" [scrollEvents]="true">
   <div class="title ion-padding">
     <h4>Catégories</h4>
     <p>
@@ -48,17 +48,19 @@
     </p>
   </div>
 
-
-  <ion-row >
-    <ion-col *ngFor="let gift of giftList | filter:Filter" size="6">
-      <ion-card>
-        <ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let gift of giftList | filter:Filter" size="6" size-lg="3" size-md="4">
+        <ion-card (click)="openDetail(gift)">
           <img src="/assets/img/gifts/{{ gift.image }}" />
-          <p>{{ gift.nbPoints }} points</p>
-          <h6>{{ gift.marque }}</h6>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+          <ion-card-header>
+            <ion-card-subtitle>{{ gift.nbPoints }} points</ion-card-subtitle>
+            <ion-card-title>{{ gift.marque }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>

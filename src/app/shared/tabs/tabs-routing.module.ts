@@ -23,6 +23,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('../../gifts/gifts.module').then(m => m.GiftsPageModule)
+          },
+          {
+            path: 'gift-detail/:id/:giftMark',
+            loadChildren: () => import('../../gifts/gift-detail/gift-detail.module').then(m => m.GiftDetailPageModule)
           }
         ]
       },
